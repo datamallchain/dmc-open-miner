@@ -1,0 +1,10 @@
+listen_address="127.0.0.1:4449"
+node_id=1
+sql_url=""
+endpoint="http://127.0.0.1:4449"
+
+[gateway]
+endpoint="http://127.0.0.1:4451"
+
+[journal_client]
+endpoint="http://127.0.0.1:4452"

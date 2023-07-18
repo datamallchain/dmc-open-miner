@@ -1,0 +1,29 @@
+[package]
+name = "dmc-user-lite-server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+default = ["sqlite", "eos"]
+sqlite = ["dmc-user-journal/sqlite", "dmc-user-sources/sqlite", "dmc-user-account-server/sqlite", "dmc-user-contracts/sqlite"]
+mysql = ["dmc-user-journal/mysql", "dmc-user-sources/mysql", "dmc-user-account-server/mysql", "dmc-user-contracts/mysql"]
+eos = ["dmc-eos"]
+
+[dependencies]
+toml = "0.7"
+flexi_logger = "0.25"
+simple_logger = "4"
+tokio = {version = "1.27", features = ["macros"]}
+async-std = {version = "1.12", features = ["tokio1"]}
+serde = "1.0"
+log = "0.4"
+dmc-user-account-server = {path="../account/server"}
+dmc-user-contracts = {path="../contracts"}
+dmc-user-journal = {path="../journal"}
+dmc-user-sources = {path="../source"}
+dmc-tools-common = {path="../../common"}
+dmc-eos = {path="../../eos", optional=true}
+dmc-spv = {path="../../spv"}
+dirs = "5"
+url = "*"

@@ -1,0 +1,30 @@
+[package]
+name = "dmc-miner-client"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+simple_logger = "4"
+log="0.4"
+clap = {version = "4", features = ["string", "env"]}
+async-std = {version = "1.12", features = ["tokio1"]}
+tokio = {version = "1.27", features = ["macros"]}
+serde = { version = "1.0", features = ["derive"] }
+dmc-miner-sectors-gateway = {path="../sectors/gateway"}
+dmc-miner-sectors-node = {path="../sectors/node"}
+dmc-miner-sectors-client = {path="../sectors/client"}
+dmc-miner-account-client = {path="../account/client"}
+dmc-miner-contracts = {path="../contracts"}
+dmc-miner-lite-server = {path="../lite-server"}
+dmc-tools-common = {path="../../common"}
+dmc-spv = {path="../../spv"}
+dmc-eos = {path="../../eos"}
+url = {version="2", features=["serde"]}
+surf = { version = '2.3.2', default-features = false, features = ['h1-client-rustls'] }
+dirs = "5"
+toml = "0.7"
+inquire = "0.6"
+crc = "3"
+base64 = "0.21"

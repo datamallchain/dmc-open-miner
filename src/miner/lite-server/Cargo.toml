@@ -1,0 +1,23 @@
+[package]
+name = "dmc-miner-lite-server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dmc-miner-account-server = {path = "../account/server"}
+dmc-miner-contracts = {path = "../contracts"}
+dmc-miner-journal = {path = "../journal"}
+dmc-miner-sectors-node = {path = "../sectors/node"}
+dmc-tools-common = {path="../../common"}
+dmc-eos = {path="../../eos"}
+dmc-miner-account-client = { path = '../account/client' }
+dmc-miner-sectors-client = { path = '../sectors/client' }
+tokio = {version = "1.27", features = ["macros"]}
+async-std = {version = "1.12", features = ["tokio1"]}
+serde = "1.0"
+log = "0.4"
+dirs = "5"
+flexi_logger = "0.25"
+toml = "0.7"

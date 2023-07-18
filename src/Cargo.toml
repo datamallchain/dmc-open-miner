@@ -1,0 +1,36 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "common", 
+    "miner/journal", 
+    "miner/account/client",
+    "miner/account/server",
+    "miner/sectors/client", 
+    "miner/sectors/gateway", 
+    "miner/sectors/node", 
+    "miner/contracts",
+    "miner/client",
+    "miner/lite-server",
+    "user/journal",
+    "user/source",
+    "user/account/client",
+    "user/account/server",
+    "user/contracts", 
+    "spv",
+    "eos",
+    "tests",
+    "user/lite-server",
+    "user/lite-client",
+]
+
+[profile.release]
+opt-level = 3
+debug = true
+debug-assertions = false
+overflow-checks = false
+lto = false
+panic = 'unwind'
+incremental = false
+codegen-units = 16
+rpath = false

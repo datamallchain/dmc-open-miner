@@ -1,0 +1,9 @@
+[journal]
+host=7233
+[source]
+host=7234
+[contract]
+host=7235
+[account]
+host=7236
+spv_client={host="https://testdmc.dmc.tbudr.top/spv"}

@@ -1,0 +1,7 @@
+.vscode
+**/target
+/src/eos-spv/
+/src/check-merkle/node_modules/
+/src/check-merkle/package-lock.json
+/src/miner-dist/
+/dist/

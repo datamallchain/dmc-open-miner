@@ -1,0 +1,25 @@
+[package]
+name = "dmc-spv"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+default = ["eos"]
+eos = ["dmc-eos"]
+
+[dependencies]
+sqlx = { version = "0.6", features = ["runtime-async-std-rustls", "macros", "mysql"] }
+async-std = {version = "*", features = ['tokio1']}
+tokio = {version = "1.27", features = ["macros"]}
+tide = "0.16"
+log = "0.4"
+hex = "*"
+serde = "1"
+serde_json = "*"
+surf = { version = '2.3.2', default-features = false, features = ['h1-client-rustls'] }
+url_params_serializer = "*"
+simple_logger = "4"
+toml = "0.7"
+dmc-tools-common = {path = "../common"}
+dmc-eos = {path = "../eos", optional = true}

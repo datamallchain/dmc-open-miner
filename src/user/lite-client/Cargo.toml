@@ -1,0 +1,38 @@
+[package]
+name = "dmc-user-lite-client"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["sqlite", "eos"]
+sqlite = ["dmc-user-journal/sqlite", "dmc-user-sources/sqlite", "dmc-user-contracts/sqlite"]
+eos = ["dmc-user-contracts/eos"]
+
+[dependencies]
+log = "*"
+clap = {version = "4.2.2", features = ["derive"]}
+env_logger = "*"
+async-std = {version = "*", features = ['tokio1']}
+tokio = {version = "1.27", features = ["macros"]}
+toml = "*"
+tide = "0.14.0"
+serde = { version = "1.0", features = ["derive"] }
+dmc-tools-common = { path = '../../common' }
+dmc-miner-contracts = { path = '../../miner/contracts' }
+dmc-user-journal = { path = '../journal' }
+dmc-user-sources = { path = '../source' }
+dmc-user-account-client = { path = '../account/client' }
+dmc-user-contracts = { path = '../contracts' }
+dmc-spv = {path="../../spv"}
+rand = "0.8"
+zip = "0.6"
+walkdir = "2.3"
+crc = "3"
+hex = "0.4"
+indicatif = "0.17"
+once_cell = "1.17"
+dirs = "5"
+inquire = "0.6"
+dmc-user-lite-server = {path="../lite-server"}

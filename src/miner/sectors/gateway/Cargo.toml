@@ -1,0 +1,21 @@
+[package]
+name = "dmc-miner-sectors-gateway"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "*"
+flexi_logger = "0.25"
+sqlx = { version = "0.6", features = ["runtime-async-std-rustls", "mysql", "macros" ] }
+async-std = "*"
+serde = "1.0.137"
+serde_json = "1.0.81"
+tide = "0.14.0"
+surf = { version = '2.3.2', default-features = false, features = ['h1-client-rustls'] }
+toml = "*"
+url_params_serializer = "*"
+dmc-tools-common = { path = '../../../common' }
+dmc-miner-sectors-client = { path = '../client' }
+dmc-miner-sectors-node = { path = '../node' }

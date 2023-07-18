@@ -1,0 +1,9 @@
+[journal]
+port=20004
+[source]
+port=20005
+[contract]
+port=20007
+[account]
+port=20006
+spv_client={host="http://localhost::20000"}
